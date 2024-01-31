@@ -3,24 +3,28 @@ import requests as r , json , movie_manager
 
 def menu_options():
     menu = """
-[1] Search movies based on it's exact title.
-[2] Search movies based on a word in the title.
-[3] Show history of previously searched movies.
-[4] Exit program.
-"""
+        [1] Search movies based on it's exact title.
+        [2] Search movies based on a word in the title.
+        [3] Show history of previously searched movies.
+        [4] Exit program.
+        """
     print(menu)
 def menu_selection(select):
     if select == 1:
         print("You have selected 1")
+        movie_manager.movie_search_title()
     elif select == 2:
         print("You have selected 2")
+        movie_manager.movie_search_word()
     elif select == 3:
         print("You have selected 3")
+        movie_manager.search_hist()
     elif select == 4:
         print("Exiting...")
         exit()
     else:
         print("Invalid selection. Please try again.")
+
 def menu_choice():
     while True:
         menu_options()
