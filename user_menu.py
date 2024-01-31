@@ -1,5 +1,6 @@
-import requests as r
+import requests as r , json , movie_manager
  # https://www.omdbapi.com/?apikey=5d7a7e3e&s=searched_movie
+
 def menu_options():
     menu = """
 [1] Search movies based on it's exact title.
@@ -22,9 +23,12 @@ def menu_selection(select):
         print("Invalid selection. Please try again.")
 def menu_choice():
     while True:
-        menu_selection()
+        menu_options()
         try:
             select = int(input("Please select an option"))
             menu_selection(select)
         except ValueError:
             print("Invalid selection. Please try again.")
+
+if __name__ == "__main__":
+    menu_choice()
