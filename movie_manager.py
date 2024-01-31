@@ -60,7 +60,11 @@ def movie_search_word():
 
 def search_hist():
     print("Latest searches.\n")
-    for rows in search_history:
-        print(rows['Search'])
+    for response in search_history:
+        if 'Search' in response:
+            for row in response['Search']:
+                print('Title:', row.get("Title", "N/A"), 'Year:', row.get("Year:", "N/A"), 'imdbID:', row.get("imdbID:", "NA/"))
+        else:
+            print('Title', response.get("Title", "N/A"), 'Year:', response.get("Year:", "N/A"), 'imdbID', response.get("imdbID:", "NA/"))
 
 
